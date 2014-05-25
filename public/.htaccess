@@ -1,0 +1,58 @@
+RewriteEngine on
+
+	# This htaccess is the configuration for this installation
+	# Main target is to map SEO friendly URLs to the bootstrap file 
+
+
+	# Rewrite "domain.com -> www.domain.com
+	# -------------------------------------
+	# RewriteCond %{HTTPS} !=on
+	# RewriteCond %{HTTP_HOST} ^www.domain.com$
+	# RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+	# Rewrite "www.domain.com -> domain.com
+	# -------------------------------------
+	# RewriteCond %{HTTPS} !=on
+	# RewriteCond %{HTTP_HOST} ^www.domain.com$
+	# RewriteRule ^(.*)$ http://tau-mal-auf.de/$1 [R=301,L]
+
+	# force SSL for all files
+	# -----------------------
+	# RewriteCond %{SERVER_PORT} !^443$
+	# RewriteCond %{HTTP_HOST} ^www.domain.com$
+	# RewriteRule (.*)  https://%{SERVER_NAME}%{REQUEST_URI} [L]
+
+	# Maintenance mode
+	# -------------------
+	# RewriteCond %{REMOTE_ADDR} !x.x.x.x
+	# RewriteRule !(maintenance\.htm|.+\.(gif|jpg|css)) /maintenance.htm [R]
+
+# Map request to index.php if the file was not found
+# ---------------------------------------------------------------------------------------------
+# set rewrite base for a TLD
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{HTTP_HOST} \.[a-z]{2,}$
+RewriteRule ^([a-z0-9\-/]*)$ /index.php?morrow_path_info=$1 [QSA,NC]
+
+# set rewrite base for development URLs (simple host names and IPs)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{HTTP_HOST} !\.[a-z]{2,}$
+RewriteRule ^([a-z0-9\-/]*)$ index.php?morrow_path_info=$1 [QSA,NC]
+
+# Prevent directory listing
+# ---------------------------------------------------------------------------------------------
+Options -Indexes
+
+# Deflate static ressources
+# ---------------------------------------------------------------------------------------------
+<Ifmodule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/html text/plain text/css application/json
+	AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript 
+	AddOutputFilterByType DEFLATE text/xml application/xml text/x-component
+</IfModule>
+
+# Trigger IEs best render mode
+# ---------------------------------------------------------------------------------------------
+<IfModule mod_headers.c>
+	Header set X-UA-Compatible "IE=edge"
+</IfModule>

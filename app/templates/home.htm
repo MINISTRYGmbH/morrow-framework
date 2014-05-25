@@ -1,0 +1,83 @@
+~:extend('_index')~
+
+~:block('body')~
+	<header>
+		<h1>
+			MorrowTwo Framework.
+		</h1>
+	</header>
+	
+	<section>
+		<p>
+			<a href="~~:url('test/')~">Test-Link</a>
+		</p>
+
+		<p>
+			<em>Well done. You have properly installed the MorrowTwo Framework. Wasn't that difficult, eh?</em><br />
+			This is the default home page of the <code>main</code> project.
+		</p>
+		
+		<p>		
+			Now that you're up and running, it's time to start creating! Here are some links to help you get started: 
+		</p>
+			
+		<ul>
+			<li>
+				<strong>Official website:</strong> <a href="http://code.google.com/p/morrowtwo/" target="_blank">http://code.google.com/p/morrowtwo/</a>
+			</li>
+			<li>
+				<strong>Documentation:</strong> <a href="http://code.google.com/p/morrowtwo/wiki/Homepage?tm=6" target="_blank">http://code.google.com/p/morrowtwo/wiki/Homepage?tm=6</a>
+			</li>
+		</ul>
+	</section>
+
+
+	<style>
+	input.error { background: #fee; }
+	</style>
+
+	<?php
+	\Morrow\Form::$error_class = 'error';
+	$form->setName('testform');
+	?>
+
+	<form action="~~:raw($page.path.absolute)~" method="post" enctype="multipart/form-data">
+		~~$form->label('salutation', 'Anrede')~
+		~~$form->select('salutation[]', :raw($salutations), array('multiple' => 'multiple'))~
+		~~$form->error('salutation')~
+		<br />
+
+		~~$form->label('text', 'Text')~
+		~~$form->input('text')~
+		~~$form->error('text')~
+		<br />
+
+		~~$form->label('username', 'Username')~
+		~~$form->text('username')~
+		~~$form->error('username')~
+		<br />
+
+		~~$form->label('file', 'Datei-Upload')~
+		~~$form->file('file')~
+		~~$form->error('file')~
+		<br />
+
+		Wähle:
+		~~$form->checkbox('multi[0]', 'vater')~
+		~~$form->label('multi[0]', 'Vater')~
+		~~$form->checkbox('multi[1]', 'mutter')~
+		~~$form->label('multi[1]', 'Mutter')~
+		~~$form->error('multi')~
+		<br />
+
+		~~$form->checkbox('simplecheckbox', 'vater')~
+		~~$form->label('simplecheckbox', 'Vater')~
+		<br />
+
+		~~$form->label('date', 'Datum')~
+		~~$form->text('date')~
+		<br />
+
+		<input type="submit" name="sent" value="Submit">
+	</form>
+~:endblock('body')~

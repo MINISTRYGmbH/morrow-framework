@@ -1,0 +1,20 @@
+{
+    "name": "morrow/project", 
+    "type": "project", 
+    "description": "The skeleton for your next project",
+    "license": "LGPL-3.0",
+    "require": {
+        "php": ">=5.3",
+        "ministrygmbh/morrow-framework": "dev-master",
+        "mcsodbrenner/serpent": "2.0.*",
+        "phpmailer/phpmailer": "5.2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "app/libraries/"
+        },
+        "psr-4": {
+            "App\\Models\\": "app/models/"
+        }
+    }
+}
