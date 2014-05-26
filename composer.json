@@ -6,13 +6,5 @@
     "require": {
         "php": ">=5.3",
         "morrow/core": "dev-master"
-    },
-    "autoload": {
-        "psr-0": {
-            "": "app/libraries/"
-        },
-        "psr-4": {
-            "App\\Models\\": "app/models/"
-        }
     }
 }
