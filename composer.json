@@ -6,8 +6,6 @@
     "require": {
         "php": ">=5.3",
         "morrow/core": "dev-master",
-        "mcsodbrenner/serpent": "2.0.*",
-        "phpmailer/phpmailer": "5.2.*"
     },
     "autoload": {
         "psr-0": {
