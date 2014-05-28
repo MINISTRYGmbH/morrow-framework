@@ -26,5 +26,15 @@ class DefaultController extends Factory {
 		// Do not allow to show this site in a frameset (prevents clickjacking)
 		$this->security->setFrameOptions('DENY');
 		*/
+	
+		if ($this->input->get('set')) {
+			$this->session->set('foo_normal', 'bar');
+			$this->session->setFlash('foo_flash', 'bar');
+			//$this->pagesession->setFlash('foo_pageflash', 'bar');
+			$this->url->redirect('home');
+		} else {
+			Debug::dump($this->session->getFlash('foo'));
+			Debug::dump($_SESSION);
+		}
 	}
 }
