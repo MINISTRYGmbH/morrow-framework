@@ -4,7 +4,7 @@ namespace App;
 use Morrow\Factory;
 use Morrow\Debug;
 
-class PageController extends DefaultController {
+class Home extends _Default {
 	public function run() {
 		$this->_testValidator();
 		//$this->_testStreams();
