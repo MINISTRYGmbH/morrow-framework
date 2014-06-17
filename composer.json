@@ -5,16 +5,14 @@
     "license": "proprietary",
     "require": {
         "php": ">=5.3",
-        "morrow/core": "dev-master"
+        "morrow/core": "dev-features"
     },
     "autoload": {
         "psr-0": {
             "": "app/libraries/"
         },
         "psr-4": {
-            "App\\": "app/",
-            "App\\Models\\": "app/models/",
-            "App\\Features\\": "app/features/"
+            "app\\": "app/"
         }
     }
 }
