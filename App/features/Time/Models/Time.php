@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Features\Time\Models;
+namespace app\features\Time\Models;
 use Morrow\Debug;
 use Morrow\Factory;
 
