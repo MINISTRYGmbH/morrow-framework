@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace app;
 use Morrow\Factory;
 use Morrow\Debug;
 
