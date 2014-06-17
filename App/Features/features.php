@@ -2,11 +2,8 @@
 
 return array(
 	'Home' => array(
-		'//header/h1' => array(
-			'Time\\Simple',
+		'//*[@id="canvas"]' => array(
+			array('prepend' => '\\App\\Features\\Time\\Simple'),
 		),
-		// '//section' => array(
-		// 	'Dummy\\Copy',
-		// ),
 	),
 );

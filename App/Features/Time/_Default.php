@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Features\Dummy;
+namespace App\Features\Time;
 use Morrow\Factory;
 use Morrow\Debug;
 
