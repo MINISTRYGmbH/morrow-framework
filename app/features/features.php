@@ -3,10 +3,15 @@
 return array(
 	'Home' => array(
 		'//*[@id="canvas"]' => array(
-			array('prepend' => '\\app\\features\\Time\\Simple'),
+			array('prepend' => 'Time\\Simple'),
 		),
 		'//section' => array(
-			array('append' => '\\app\\features\\Form\\Form'),
+			//array('append' => 'Form\\Form'),
+			//array('before' => 'Form\\Form'),
+			array('after' => 'Form\\Form'),
+		),
+		'//body' => array(
+			array('append' => 'Time\\Javascript'),
 		),
 	),
 );

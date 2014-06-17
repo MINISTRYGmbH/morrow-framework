@@ -6,6 +6,8 @@ use Morrow\Debug;
 
 class Simple extends _Default {
 	public function run() {
+		//$this->features->delete('Form');
+
 		$time	= new Models\Time;
 		$format	= $this->config->get('app.features.time.format');
 

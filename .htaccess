@@ -5,7 +5,11 @@ RewriteEngine on
 	# You should not need to do any changes here
 
 
-# Map all requests to the public subfolder
+# Map feature public requests to the correct subfolder
 # ----------------------------------------
-RewriteCond %{REQUEST_URI} !^public/
+RewriteRule features/([^/]+)/public/(.+) app/features/$1/public/$2 [L]
+
+# Map all other requests to the public subfolder
+# ----------------------------------------
+RewriteCond %{REQUEST_URI} !^/public/
 RewriteRule ^(.*)$ public/$1?morrow_basehref_depth=1 [QSA]
