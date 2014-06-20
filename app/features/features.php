@@ -8,10 +8,10 @@ return array(
 		'//section' => array(
 			//array('append' => 'Form\\Form'),
 			//array('before' => 'Form\\Form'),
-			array('after' => 'Form\\Form'),
+			//array('after' => 'Form\\Form'),
 		),
 		'//body' => array(
-			array('append' => 'Time\\Javascript'),
+			//array('append' => 'Time\\Javascript'),
 		),
 	),
 );

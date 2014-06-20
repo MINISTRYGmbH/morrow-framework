@@ -9,6 +9,6 @@ require '../vendor/autoload.php';
 new Morrow\Core\Bootstrap();
 
 // $end_time = microtime(true);
-// echo 'Time: ' . ($end_time - $start_time) . '<br />';
-// echo 'Memory: ' . (memory_get_usage()/1024) . ' kb<br />';
-// echo 'Memory Peak: ' . (memory_get_peak_usage()/1024) . ' kb<br />';
+// echo 'Time: ' . round($end_time - $start_time, 2) . '<br />';
+// echo 'Memory: ' . round(memory_get_usage()/1024) . ' kb<br />';
+// echo 'Memory Peak: ' . round(memory_get_peak_usage()/1024) . ' kb<br />';
