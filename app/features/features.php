@@ -1,17 +1,22 @@
 <?php
 
-return array(
-	'~^home$~i' => array(
-		'#canvas' => array(
-			array('prepend' => '\\app\\features\\Time\\Simple'),
-		),
-		'section' => array(
-			//array('append' => '\\app\\features\\Form\\Form'),
-			//array('before' => '\\app\\features\\Form\\Form'),
-			//array('after' => '\\app\\features\\Form\\Form'),
-		),
-		'body' => array(
-			//array('append' => '\\app\\features\\Time\\Javascript'),
-		),
-	),
-);
+$features = [
+	'~^(home)?$~i' => [
+		'#canvas' => [
+			['action' => 'prepend', 'class' => '\\app\\features\\Time\\Simple', 'config' => ['format' => 123]]
+		],
+		'section' => [
+			['action' => 'append', 'class' => '\\app\\features\\Form\\Form'],
+		],
+		'body' => [
+			['action' => 'append', 'class' => '\\app\\features\\Time\\Javascript'],
+		],
+	],
+];
+
+
+foreach ($features as $regex => $feature) {
+	// ... modify here
+}
+
+return $features;

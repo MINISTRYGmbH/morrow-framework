@@ -18,7 +18,7 @@ class Simple extends _Default {
 		//Debug::dump($dom->get()); // useful for save html to file
 
 		$time	= new Models\Time;
-		$format	= $this->config->get('app.features.time.format');
+		$format	= Factory::load('Config:config-feature')->get('app.features.time.format');
 
 		$view = Factory::load('View:view-feature');
 		$view->setContent('time', $time->get());
