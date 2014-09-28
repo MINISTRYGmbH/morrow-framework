@@ -16,12 +16,55 @@
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 	
 	<title>MorrowTwo 3 Framework is ready.</title>
-	<link rel="stylesheet" href="css/reset.css" />
-	<link rel="stylesheet" href="css/default.css" />
+	<link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900">
+
+	<style>
+	body { background: #f4f4f4; font-family: "Source Sans Pro"; }
+	#canvas { ransform: perspective(900px) rotateX(20deg); }
+
+	h1 { font: bold 80px/80px "Source Sans Pro"; }
+	/*
+	#f4f4f4;
+	#17a4b8;
+	#eb6657;
+	#c0c0c0;
+	*/
+
+	.hex { float: left; margin: 30px 3px 0 0; width: 104px; height: 60px; background: #c0c0c0; position: relative; }
+	.hex:before { content: " "; width: 0; height: 0; border-bottom: 30px solid #c0c0c0; border-left: 52px solid transparent; border-right: 52px solid transparent; position: absolute; top: -30px; }
+	.hex:after { content: ""; width: 0; position: absolute; bottom: -30px; border-top: 30px solid #c0c0c0; border-left: 52px solid transparent; border-right: 52px solid transparent; }
+	.hex-row { clear; left; }
+	.hex-row-even { margin: 3px 0 0 54px; }
+
+	.hex-em { background: #17a4b8; }
+	.hex-em:before { border-bottom-color: #17a4b8; }
+	.hex-em:after { border-top-color: #17a4b8; }
+
+	.hex-strong { background: #eb6657; }
+	.hex-strong:before { border-bottom-color: #eb6657; }
+	.hex-strong:after { border-top-color: #eb6657; }
+	</style>
 </head>
 <body>
 
 <div id="canvas">
+	<div class="hex-row">
+		<div class="hex"></div>
+		<div class="hex"></div>
+		<div class="hex"></div>
+		<div style="clear: left"></div>
+	</div>
+	<div class="hex-row hex-row-even">
+		<div class="hex hex-em"></div>
+		<div class="hex"></div>
+		<div class="hex"></div>
+	</div>
+	<div class="hex-row">
+		<div class="hex hex-strong"></div>
+		<div class="hex"></div>
+		<div class="hex"></div>
+	</div>
 	~:block('body')~
 	~:endblock('body')~
 </div>
