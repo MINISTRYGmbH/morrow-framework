@@ -17,10 +17,12 @@ class Simple extends _Default {
 		
 		//Debug::dump($dom->get()); // useful for save html to file
 
-		$time	= new Models\Time;
-		$format	= Factory::load('Config:config-feature')->get('app.features.time.format');
+		$dom->append('body', '<script src="features/Time/public/default.js" />');
 
-		$view = Factory::load('View:view-feature');
+		$time	= new Models\Time;
+		$format	= Factory::load('Config:feature')->get('format');
+
+		$view = Factory::load('View:feature');
 		$view->setContent('time', $time->get());
 		$view->setContent('format', $format);
 	}

@@ -50,9 +50,3 @@ Options -Indexes
 	AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript 
 	AddOutputFilterByType DEFLATE text/xml application/xml text/x-component
 </IfModule>
-
-# Trigger IEs best render mode
-# ---------------------------------------------------------------------------------------------
-<IfModule mod_headers.c>
-	Header set X-UA-Compatible "IE=edge"
-</IfModule>

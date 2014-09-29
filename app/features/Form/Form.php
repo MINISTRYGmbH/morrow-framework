@@ -6,7 +6,7 @@ use Morrow\Debug;
 
 class Form extends Factory {
 	public function run() {
-		$view = Factory::load('View:view-feature');
+		$view = Factory::load('View:feature');
 
 		$salutations = array('Anreden' => array('herr' => 'Herr', 'frau' => 'Frau'), 'foo' => 'bar', 'Weiteres' => array('test1' => 'Test 1', 'test2' => 'Test 2'));
 		$view->setContent('salutations', $salutations);

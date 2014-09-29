@@ -6,10 +6,7 @@ $features = [
 			['action' => 'prepend', 'class' => '\\app\\features\\Time\\Simple', 'config' => ['format' => 123]]
 		],
 		'section' => [
-			['action' => 'append', 'class' => '\\app\\features\\Form\\Form'],
-		],
-		'body' => [
-			['action' => 'append', 'class' => '\\app\\features\\Time\\Javascript'],
+			//['action' => 'append', 'class' => '\\app\\features\\Form\\Form'],
 		],
 	],
 ];
