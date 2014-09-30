@@ -6,7 +6,7 @@
 require '../vendor/autoload.php';
 
 // execute Morrow framework
-new Morrow\Core\Bootstrap();
+new Morrow\Core\Frontcontroller();
 
 // $end_time = microtime(true);
 // echo 'Time: ' . round($end_time - $start_time, 2) . '<br />';
