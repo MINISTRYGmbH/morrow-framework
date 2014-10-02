@@ -15,13 +15,21 @@ if (isset($_GET['morrow_basehref_depth'])) {
 }
 
 return array(
+// cache
+	'cache.save_path'				=> STORAGE_PATH .'codecache/',
+
+// image
+	'image.save_path'				=> PUBLIC_STORAGE_PATH . 'thumbs/',
+
 // debug
 	'debug.output.screen'			=> (isset($_SERVER['HTTP_HOST']) && preg_match('/\.[a-z]+$/', $_SERVER['HTTP_HOST'])) ? false : true,
 	'debug.output.file'				=> (isset($_SERVER['HTTP_HOST']) && preg_match('/\.[a-z]+$/', $_SERVER['HTTP_HOST'])) ? true : false,
 	'debug.file.path'				=> STORAGE_PATH .'errors/'. date('Y-m-d') .'.txt',
 	
 // languages
-	'languages'						=> array('en'),
+	'languages.possible'			=> array('en'),
+	'languages.language_path'		=> APP_PATH .'languages/',
+	'languages.search_paths'		=> array(APP_PATH . '*.htm', APP_PATH . '*.php'),
 	
 // locale/timezone
 	'locale.timezone'				=> 'Europe/Berlin',
@@ -33,6 +41,11 @@ return array(
 	
 // log
 	'log.file.path'					=> STORAGE_PATH .'logs/'. date('Y-m-d') .'.txt',
+
+// security
+	'security.csp.default-src'		=> "'self'",
+	'security.frame_options'		=> "DENY",
+	'security.content_type_options'	=> "nosniff",
 	
 // session
 	'session.save_path'				=> STORAGE_PATH . 'sessions/', // The path where all sessions are stored (it is also possible to use stream wrappers)
