@@ -1,0 +1,15 @@
+body { padding: 20px 0 0 0; }
+h2 { margin: 40px 0 10px 0; }
+.navbar-brand { white-space: nowrap; }
+
+#table_members p { margin: 0; }
+
+pre { line-height: 16px; }
+
+.panel ul { padding: 0 0 0 20px; }
+.panel ul li { list-style-type: none; }
+.panel ul li.active > a { background-color: #eee; font-weight: bold; }
+.panel p { margin: 0; }
+
+th small { font-weight: normal; }
+td p { padding: 5px 10px; }

@@ -1,33 +1,127 @@
 ~:extend('_Base')~
 
+~:block('sidebar')~
+	<div class="panel panel-default">
+		<div class="panel-heading">Documentation</div>
+		<div class="panel-body">
+			<p>
+				The documentation is its own project and simple installable by<br />
+				<code>composer create-project morrow/docs [PATH]</code>
+			</p>
+		</div>
+	</div>
+~:endblock('body')~
+
 ~:block('body')~
 	<header>
-		<h1>
-			MorrowTwo Framework.
-		</h1>
+		<div class="page-header">
+			<h1>
+				Welcome to Morrow
+			</h1>
+		</div>
 	</header>
 	
 	<section>
 		<p>
-			<a href="~~:url('test/')~">Test-Link</a>
-		</p>
-
-		<p>
-			<em>Well done. You have properly installed the MorrowTwo Framework. Wasn't that difficult, eh?</em><br />
-			This is the default home page of the <code>main</code> project.
+			Well done. You have properly installed the Morrow PHP Framework. Wasn't that difficult, eh?
+			Now that you're up and running, it's time to start creating.
 		</p>
 		
-		<p>		
-			Now that you're up and running, it's time to start creating! Here are some links to help you get started: 
-		</p>
-			
-		<ul>
-			<li>
-				<strong>Official website:</strong> <a href="http://code.google.com/p/morrowtwo/" target="_blank">http://code.google.com/p/morrowtwo/</a>
-			</li>
-			<li>
-				<strong>Documentation:</strong> <a href="http://code.google.com/p/morrowtwo/wiki/Homepage?tm=6" target="_blank">http://code.google.com/p/morrowtwo/wiki/Homepage?tm=6</a>
-			</li>
-		</ul>
+		<h2>Information</h2>
+
+		<table class="table table-striped">
+			<tbody>
+				<tr>
+					<th>PHP version</th>
+					<td>
+						~if (version_compare(phpversion(), '5.4', '>=')):~
+							<p class="bg-success">~~phpversion()~</p>
+						~else:~
+							<p class="bg-danger">~~phpversion()~ (has to be >= 5.4)</p>
+						~endif~
+					</td>
+				</tr>
+				<tr>
+					<th>
+						zlib Extension<br />
+						<small>
+							\Morrow\Frontcontroller
+						</small>
+					</th>
+					<td>
+						~if (phpversion('zlib')):~
+							<p class="bg-success">~~phpversion('zlib')~</p>
+						~else:~
+							<p class="bg-warning">Your pages will not compressed by ob_gzhandler.</p>
+						~endif~
+					</td>
+				</tr>
+				<tr>
+					<th>
+						json Extension<br />
+						<small>
+							\Morrow\MessageQueue<br />
+							\Morrow\Validator<br />
+							\Morrow\Views\Json<br />
+							\Morrow\Views\Jsonp
+						</small>
+					</th>
+					<td>
+						~if (phpversion('json')):~
+							<p class="bg-success">~~phpversion('json')~</p>
+						~else:~
+							<p class="bg-danger">You cannot use the classes on the left.</p>
+						~endif~
+					</td>
+				</tr>
+				<tr>
+					<th>
+						GDlib Extension<br />
+						<small>
+							\Morrow\Image<br />
+						</small>
+					</th>
+					<td>
+						~if ((extension_loaded('gd') && function_exists('gd_info'))):~
+ 							<p class="bg-success">~~print_r(gd_info()['GD Version'])~</p>
+						~else:~
+							<p class="bg-danger">You cannot use the classes on the left.</p>
+						~endif~
+					</td>
+				</tr>
+				<tr>
+					<th>
+						PDO (Mysql) Extension<br />
+						<small>
+							\Morrow\Db<br />
+						</small>
+					</th>
+					<td>
+						~if (phpversion('pdo')):~
+							<p class="bg-success">~~phpversion('pdo')~</p>
+						~else:~
+							<p class="bg-danger">You cannot use the classes on the left.</p>
+						~endif~
+					</td>
+				</tr>
+				<tr>
+					<th>
+						session.auto_start<br />
+						<small>
+							\Morrow\Pagesession<br />
+							\Morrow\Session<br />
+						</small>
+					</th>
+					<td>
+						~if (!ini_get('session.auto_start')):~
+							<p class="bg-success">~~ini_get('session.auto_start')~</p>
+						~else:~
+							<p class="bg-danger">You should set this setting to 0.</p>
+						~endif~
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
 	</section>
 ~:endblock('body')~

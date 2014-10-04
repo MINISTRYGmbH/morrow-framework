@@ -1,72 +1,45 @@
 <!doctype html>
 
-<!--[if lt IE 7]>  <html class="ie ie6 lte9 lte8 lte7"> <![endif]-->
-<!--[if IE 7]>     <html class="ie ie7 lte9 lte8 lte7"> <![endif]-->
-<!--[if IE 8]>     <html class="ie ie8 lte9 lte8">      <![endif]-->
-<!--[if IE 9]>     <html class="ie ie9 lte9">           <![endif]-->
-<!--[if gt IE 9]>  <html class="ie">                    <![endif]-->
-<!--[if !IE]><!--> <html>                               <!--<![endif]-->
+<html>
 <head>
 	<base href="~~:raw($page.base_href)~" />
 	<meta charset="~~:raw($page.charset)~" />
-	<link rel="shortcut icon" href="/favicon.ico">
 
-	<meta name="viewport" content="width=device-width" />
-	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-	
-	<title>MorrowTwo 3 Framework is ready.</title>
-	<link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900">
-
-	<style>
-	body { background: #f4f4f4; font-family: "Source Sans Pro"; }
-	#canvas { ransform: perspective(900px) rotateX(20deg); }
-
-	h1 { font: bold 80px/80px "Source Sans Pro"; }
-	/*
-	#f4f4f4;
-	#17a4b8;
-	#eb6657;
-	#c0c0c0;
-	*/
-
-	.hex { float: left; margin: 30px 3px 0 0; width: 104px; height: 60px; background: #c0c0c0; position: relative; }
-	.hex:before { content: " "; width: 0; height: 0; border-bottom: 30px solid #c0c0c0; border-left: 52px solid transparent; border-right: 52px solid transparent; position: absolute; top: -30px; }
-	.hex:after { content: ""; width: 0; position: absolute; bottom: -30px; border-top: 30px solid #c0c0c0; border-left: 52px solid transparent; border-right: 52px solid transparent; }
-	.hex-row { clear; left; }
-	.hex-row-even { margin: 3px 0 0 54px; }
-
-	.hex-em { background: #17a4b8; }
-	.hex-em:before { border-bottom-color: #17a4b8; }
-	.hex-em:after { border-top-color: #17a4b8; }
-
-	.hex-strong { background: #eb6657; }
-	.hex-strong:before { border-bottom-color: #eb6657; }
-	.hex-strong:after { border-top-color: #eb6657; }
-	</style>
+	<title>Morrow PHP Framework</title>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<div id="canvas">
-	<div class="hex-row">
-		<div class="hex"></div>
-		<div class="hex"></div>
-		<div class="hex"></div>
-		<div style="clear: left"></div>
+<div class="container">
+	
+	<div class="row">
+		<div class="col-lg-12">
+
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Morrow PHP Framework</a>
+				</div>
+			</nav>
+
+		</div>
 	</div>
-	<div class="hex-row hex-row-even">
-		<div class="hex hex-em"></div>
-		<div class="hex"></div>
-		<div class="hex"></div>
+
+	<div class="row">
+		<div class="col-lg-4">
+			~:block('sidebar')~
+			~:endblock()~
+		</div>
+		
+		<div id="content" class="col-lg-8">
+			~:block('body')~
+			~:endblock()~
+		</div>
 	</div>
-	<div class="hex-row">
-		<div class="hex hex-strong"></div>
-		<div class="hex"></div>
-		<div class="hex"></div>
-	</div>
-	~:block('body')~
-	~:endblock('body')~
 </div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="javascript/default.js"></script>
 
 </body>
 </html>
