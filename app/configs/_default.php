@@ -18,9 +18,6 @@ return array(
 // cache
 	'cache.save_path'				=> STORAGE_PATH .'codecache/',
 
-// image
-	'image.save_path'				=> PUBLIC_STORAGE_PATH . 'thumbs/',
-
 // debug
 	'debug.output.screen'			=> (isset($_SERVER['HTTP_HOST']) && preg_match('/\.[a-z]+$/', $_SERVER['HTTP_HOST'])) ? false : true,
 	'debug.output.file'				=> (isset($_SERVER['HTTP_HOST']) && preg_match('/\.[a-z]+$/', $_SERVER['HTTP_HOST'])) ? true : false,
@@ -35,13 +32,16 @@ return array(
 	'locale.timezone'				=> 'Europe/Berlin',
 	
 // routing rules
-	'routing'						=> array(
-		''							=> 'home',
+	'router.routes'					=> array(
+		'=^$='						=> '\app\Home',
 	),
+	'router.fallback'				=>	function($url) {
+											$class = str_replace('/', '_', $url);
+											$class = ucfirst($class);
+											$class = preg_replace('/[^a-z0-9_]/i', '', $class);
+											return '\app\\' . $class;
+										},
 	
-// log
-	'log.file.path'					=> STORAGE_PATH .'logs/'. date('Y-m-d') .'.txt',
-
 // security
 	'security.csp.default-src'		=> "'self'",
 	'security.frame_options'		=> "DENY",
@@ -59,6 +59,20 @@ return array(
 	'session.cookie_httponly'		=> true, // If set to TRUE then PHP will attempt to send the httponly flag when setting the session cookie.
 	
 // OPTIONAL: the following config vars are NOT neccessary for the framework to run
+// db
+	'db.driver'						=> 'mysql',
+	'db.host'						=> 'localhost',
+	'db.db'							=> 'database',
+	'db.user'						=> 'user',
+	'db.pass'						=> 'pass',
+	'db.encoding'					=> 'utf8',
+	
+// image
+	'image.save_path'				=> PUBLIC_STORAGE_PATH . 'thumbs/',
+
+// log
+	'log.file.path'					=> STORAGE_PATH .'logs/'. date('Y-m-d') .'.txt',
+
 // mailer
 	'mail.Mailer'					=> 'mail',
 	'mail.From'						=> 'test@example.com',
@@ -70,32 +84,6 @@ return array(
 	'mail.Username'					=> '',
 	'mail.password'					=> '',
 	'mail.Host'						=> '',
-	
-// db
-	'db.driver'						=> 'mysql',
-	'db.host'						=> 'localhost',
-	'db.db'							=> 'database',
-	'db.user'						=> 'user',
-	'db.pass'						=> 'pass',
-	'db.encoding'					=> 'utf8',
-	
-// sitesearch
-	'sitesearch.buildindex'			=> 'true',
-	'sitesearch.exclude_patterns'	=> array(),
-	'sitesearch.tag_include_start'	=> '<!-- search_include_start -->',
-	'sitesearch.tag_include_end'	=> '<!-- search_include_end -->',
-	'sitesearch.tag_exclude_start'	=> '<!-- search_exclude_start -->',
-	'sitesearch.tag_exclude_end'	=> '<!-- search_exclude_end -->',
-	'sitesearch.check_divisor'		=> 10,
-	'sitesearch.gc_divisor'			=> 100,
-	'sitesearch.entry_lifetime'		=> '+1 month',
-	'sitesearch.db.driver'			=> 'sqlite',
-	'sitesearch.db.file'			=> STORAGE_PATH .'sitesearch.sqlite',
-	'sitesearch.db.host'			=> 'localhost',
-	'sitesearch.db.db'				=> 'sitesearch_searchengine',
-	'sitesearch.db.user'			=> 'root',
-	'sitesearch.db.pass'			=> '',
-	'sitesearch.db_tablename'		=> 'searchdata',
 	
 // message queue
 	'messagequeue.cli_path'			=> 'php',

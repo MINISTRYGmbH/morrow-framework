@@ -5,7 +5,7 @@
     "license": "proprietary",
     "require": {
         "php": ">=5.4",
-        "morrow/core": "dev-master"
+        "morrow/core": "~1"
     },
     "autoload": {
         "psr-0": {
