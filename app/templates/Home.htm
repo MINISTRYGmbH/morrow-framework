@@ -120,6 +120,21 @@
 						~endif~
 					</td>
 				</tr>
+				<tr>
+					<th>
+						display_errors<br />
+						<small>
+							\Morrow\Frontcontroller
+						</small>
+					</th>
+					<td>
+						~if (ini_get('display_errors')):~
+							<p class="bg-success">~~ini_get('display_errors')~</p>
+						~else:~
+							<p class="bg-danger">You should set this setting to 1. Morrow will try to change this value automatically.</p>
+						~endif~
+					</td>
+				</tr>
 			</tbody>
 		</table>
 
