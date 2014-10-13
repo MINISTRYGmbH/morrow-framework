@@ -2,7 +2,7 @@
 
 // If you want to modify defaults for your project (like routing rules), use this file.
 
-return array(
+return [
 	'security.csp.default-src'		=> "'self' cdnjs.cloudflare.com",
 	// 'security.csp.script-src'	=> "'self'",
 	// 'security.csp.img-src'		=> "'self'",
@@ -13,4 +13,4 @@ return array(
 	// 'security.csp.font-src'		=> "'self'",
 	'security.frame_options'		=> "DENY", // (DENY|SAMEORIGIN|ALLOW-FROM uri)
 	'security.content_type_options'	=> "nosniff",
-);
+];

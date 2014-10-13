@@ -14,7 +14,7 @@ if (isset($_GET['morrow_basehref_depth'])) {
 	$session_path = preg_replace('|([^/]+/){'.intval($_GET['morrow_basehref_depth']).'}$|', '', $session_path); // Path on the domain where the cookie will work. Use a single slash ('/') for all paths on the domain.
 }
 
-return array(
+return [
 // cache
 	'cache.save_path'				=> STORAGE_PATH .'codecache/',
 
@@ -24,17 +24,17 @@ return array(
 	'debug.file.path'				=> STORAGE_PATH .'errors/'. date('Y-m-d') .'.txt',
 	
 // languages
-	'languages.possible'			=> array('en'),
+	'languages.possible'			=> ['en'],
 	'languages.language_path'		=> APP_PATH .'languages/',
-	'languages.search_paths'		=> array(APP_PATH . '*.htm', APP_PATH . '*.php'),
+	'languages.search_paths'		=> [APP_PATH . '*.htm', APP_PATH . '*.php'],
 	
 // locale/timezone
 	'locale.timezone'				=> 'Europe/Berlin',
 	
 // routing rules
-	'router.routes'					=> array(
+	'router.routes'					=> [
 		'=^$='						=> '\app\Home',
-	),
+	],
 	'router.fallback'				=>	function($url) {
 											$class = str_replace('/', '_', $url);
 											$class = ucfirst($class);
@@ -95,4 +95,4 @@ return array(
 // message queue
 	'messagequeue.cli_path'			=> 'php',
 	'messagequeue.save_path'		=> STORAGE_PATH . 'messagequeue/',
-);
+];

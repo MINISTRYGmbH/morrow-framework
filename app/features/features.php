@@ -1,11 +1,6 @@
 <?php
 
 $features = [
-	'~^(home)?$~i' => [
-		'section' => [
-			//['action' => 'append', 'class' => '\\app\\features\\Form\\Form'],
-		],
-	],
 ];
 
 
