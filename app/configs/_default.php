@@ -19,8 +19,8 @@ return array(
 	'cache.save_path'				=> STORAGE_PATH .'codecache/',
 
 // debug
-	'debug.output.screen'			=> (isset($_SERVER['HTTP_HOST']) && preg_match('/\.[a-z]+$/', $_SERVER['HTTP_HOST'])) ? false : true,
-	'debug.output.file'				=> (isset($_SERVER['HTTP_HOST']) && preg_match('/\.[a-z]+$/', $_SERVER['HTTP_HOST'])) ? true : false,
+	'debug.output.screen'			=> (isset($_SERVER['HTTP_HOST']) && preg_match('/\.[a-z]+$/', $_SERVER['HTTP_HOST'])) ? strtotime('-1 day') : strtotime('+1 day'),
+	'debug.output.file'				=> (isset($_SERVER['HTTP_HOST']) && preg_match('/\.[a-z]+$/', $_SERVER['HTTP_HOST'])) ? strtotime('+1 day') : strtotime('-1 day'),
 	'debug.file.path'				=> STORAGE_PATH .'errors/'. date('Y-m-d') .'.txt',
 	
 // languages
@@ -40,6 +40,13 @@ return array(
 											$class = ucfirst($class);
 											$class = preg_replace('/[^a-z0-9_]/i', '', $class);
 											return '\app\\' . $class;
+										},
+	'router.template'				=>	function($class) {
+											$filename = trim($class, '\\');
+											$filename = preg_replace('~^app\\\\~', '', $filename);
+											$filename = preg_replace('~^features\\\\.+?\\\\~', '', $filename);
+											$filename = str_replace('\\', '_', $filename);
+											return $filename;
 										},
 	
 // security
