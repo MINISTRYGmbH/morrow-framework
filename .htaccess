@@ -7,7 +7,7 @@ RewriteEngine on
 
 # Map feature public requests to the correct subfolder
 # ----------------------------------------
-RewriteRule features/([^/]+)/public/(.+) app/features/$1/public/$2 [L]
+RewriteRule features/(.+)/public/(.+) app/features/$1/public/$2 [L]
 
 # Map all other requests to the public subfolder
 # ----------------------------------------
