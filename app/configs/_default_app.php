@@ -11,6 +11,7 @@ return [
 	// 'security.csp.object-src'	=> "'self'",
 	// 'security.csp.frame-src'		=> "'self'",
 	// 'security.csp.font-src'		=> "'self'",
+	// 'security.csp.connect-src'	=> "'self'",
 	'security.frame_options'		=> "DENY", // (DENY|SAMEORIGIN|ALLOW-FROM uri)
 	'security.content_type_options'	=> "nosniff",
 ];
