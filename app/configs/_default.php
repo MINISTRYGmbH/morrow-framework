@@ -89,7 +89,7 @@ return [
 	'mail.CharSet'					=> 'utf-8',
 	'mail.SMTPAuth'					=> false,
 	'mail.Username'					=> '',
-	'mail.password'					=> '',
+	'mail.Password'					=> '',
 	'mail.Host'						=> '',
 	
 // message queue
