@@ -13,3 +13,5 @@ pre { line-height: 16px; }
 
 th small { font-weight: normal; }
 td p { padding: 5px 10px; }
+
+.block-module{border:1px dashed #CCCCCC; padding:20px; margin-bottom:50px;}

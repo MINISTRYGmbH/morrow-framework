@@ -7,7 +7,7 @@ use Morrow\Debug;
 class Hello_world extends _Default {
 	public function run(){
 
-		$hour = $this->Event->trigger('Clock|get_current_time', 'h');
+		$hour = $this->Event->trigger('Clock|get_current_time', 'H');
 		foreach($this->Config->get('modules._main.activities') as $activity => $hours){
 			if(in_array($hour, $hours)){
 				$current_activity = $activity;
