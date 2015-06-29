@@ -24,20 +24,17 @@ RewriteEngine on
 	# RewriteCond %{REMOTE_ADDR} !x.x.x.x
 	# RewriteRule !(maintenance\.htm|.+\.(gif|jpg|css)) /maintenance.htm [R]
 
-
 # Map request to index.php if the file was not found
 # ---------------------------------------------------------------------------------------------
-RewriteRule ^([a-z0-9\-/]*)$ public/index.php?morrow_path_info=$1&morrow_basehref_depth=1 [L,QSA,NC]
+RewriteRule ^([a-z0-9\-/]*)$ index.php?morrow_path_info=$1&morrow_basehref_depth=1 [L,QSA,NC]
 
 
 # Map all requests to the public subfolder (also features public folder)
 # ---------------------------------------------------------------------------------------------
-RewriteCond %{REQUEST_URI} !-f
-RewriteRule features/(.+)/public/(.+) app/features/$1/public/$2 [L,QSA]
 
-RewriteCond %{REQUEST_URI} !public
-RewriteRule ^(.+)$ public/$1 [L,QSA]
-
+#DOES NOT WORK PROPERLY YET!
+RewriteCond %{REQUEST_URI} !/modules/.+?/public/.+
+RewriteRule ^(.+?)/(.+)$ modules/$1/public/$2 [L,QSA]
 
 # Prevent directory listing
 # ---------------------------------------------------------------------------------------------
@@ -48,7 +45,7 @@ Options -Indexes
 # ---------------------------------------------------------------------------------------------
 <Ifmodule mod_deflate.c>
 	AddOutputFilterByType DEFLATE text/html text/plain text/css application/json
-	AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript 
+	AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
 	AddOutputFilterByType DEFLATE text/xml application/xml text/x-component
 </IfModule>
 

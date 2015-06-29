@@ -1,0 +1,146 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "b33c3cc925cae5ec24c2f3ce86137efe",
+    "packages": [
+        {
+            "name": "mcsodbrenner/serpent",
+            "version": "2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/McSodbrenner/serpent-php-template-engine.git",
+                "reference": "71e781e89444e6811cef3474ab1d2dbad8fa9380"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/McSodbrenner/serpent-php-template-engine/zipball/71e781e89444e6811cef3474ab1d2dbad8fa9380",
+                "reference": "71e781e89444e6811cef3474ab1d2dbad8fa9380",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "McSodbrenner\\Serpent\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "description": "Serpent is a lightweight and compiling templating engine for PHP. It was designed to seamlessly integrate into existing MVC frameworks. It uses PHP itself as its template language, so you do not need to learn a new markup language. On the other side you get many improvements compared to pure PHP.",
+            "keywords": [
+                "engine",
+                "template",
+                "templating"
+            ],
+            "time": "2014-05-23 14:58:39"
+        },
+        {
+            "name": "morrow/core",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MINISTRYGmbH/morrow-core.git",
+                "reference": "5bc9d837a35669abba9f0fdcda552ce6884dd377"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MINISTRYGmbH/morrow-core/zipball/5bc9d837a35669abba9f0fdcda552ce6884dd377",
+                "reference": "5bc9d837a35669abba9f0fdcda552ce6884dd377",
+                "shasum": ""
+            },
+            "require": {
+                "mcsodbrenner/serpent": "~2",
+                "php": ">=5.4",
+                "phpmailer/phpmailer": "~5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Morrow\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "description": "Contains the core files of the Morrow framework that live in the vendor folder.",
+            "keywords": [
+                "framework",
+                "php"
+            ],
+            "time": "2014-11-13 10:27:36"
+        },
+        {
+            "name": "phpmailer/phpmailer",
+            "version": "v5.2.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPMailer/PHPMailer.git",
+                "reference": "07005ecbb80d11ec8c0f067bb37e8909cc7fcbb7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/07005ecbb80d11ec8c0f067bb37e8909cc7fcbb7",
+                "reference": "07005ecbb80d11ec8c0f067bb37e8909cc7fcbb7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0"
+            },
+            "require-dev": {
+                "phpdocumentor/phpdocumentor": "*",
+                "phpunit/phpunit": "4.3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "class.phpmailer.php",
+                    "class.smtp.php",
+                    "class.pop3.php",
+                    "extras/EasyPeasyICS.php",
+                    "extras/ntlm_sasl_client.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Jim Jagielski",
+                    "email": "jimjag@gmail.com"
+                },
+                {
+                    "name": "Marcus Bointon",
+                    "email": "phpmailer@synchromedia.co.uk"
+                },
+                {
+                    "name": "Andy Prevost",
+                    "email": "codeworxtech@users.sourceforge.net"
+                },
+                {
+                    "name": "Brent R. Matzelle"
+                }
+            ],
+            "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
+            "time": "2015-05-04 12:37:21"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.4"
+    },
+    "platform-dev": []
+}

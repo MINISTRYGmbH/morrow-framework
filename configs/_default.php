@@ -25,28 +25,27 @@ return [
 
 // languages
 	'languages.possible'			=> ['en'],
-	'languages.language_path'		=> APP_PATH .'languages/',
-	'languages.search_paths'		=> [APP_PATH . '*.htm', APP_PATH . '*.php'],
+	'languages.language_path'		=> ROOT_PATH .'languages/',
+	'languages.search_paths'		=> [ROOT_PATH . '*.htm', ROOT_PATH . '*.php'],
 
 // locale/timezone
 	'locale.timezone'				=> 'Europe/Berlin',
 
 // routing rules
 	'router.routes'					=> [
-		'=^$='		=> '\app\features\_app\_404',
+		'=^$=' => '\modules\_main\_404',
 	],
 	'router.fallback'				=>	function($url) {
 											$class = str_replace('/', '_', $url);
 											$class = ucfirst($class);
 											$class = preg_replace('/[^a-z0-9_]/i', '', $class);
-											return '\app\\features\\_app\\' . $class;
+											return '\app\\modules\\_main\\' . $class;
 										},
-	'router.template'				=>	function($class) {
-											$filename = trim($class, '\\');
-											$filename = preg_replace('~^app\\\\~', '', $filename);
-											$filename = preg_replace('~^features\\\\.+?\\\\~', '', $filename);
-											$filename = str_replace('\\', '_', $filename);
-											return $filename;
+	'router.template'				=>	function($namespace) {
+											$namespace = trim($namespace, '\\');
+											$namespace_array = explode('\\', $namespace);
+											$template_name = implode('/', array_slice($namespace_array, 3));
+											return $template_name;
 										},
 
 // security
@@ -95,4 +94,8 @@ return [
 // message queue
 	'messagequeue.cli_path'			=> 'php',
 	'messagequeue.save_path'		=> STORAGE_PATH . 'messagequeue/',
+
+// modules
+ 	'modules._config_path' => ROOT_PATH . 'modules/modules.php',
+
 ];

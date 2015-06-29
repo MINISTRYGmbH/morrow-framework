@@ -1,6 +1,6 @@
 {
-    "name": "morrow/framework", 
-    "type": "project", 
+    "name": "morrow/framework",
+    "type": "project",
     "description": "A clean project to start building your awesome app.",
     "license": "proprietary",
     "require": {
@@ -9,10 +9,10 @@
     },
     "autoload": {
         "psr-0": {
-            "": "app/libraries/"
-        },
+            "": "libraries/"
+            },
         "psr-4": {
-            "app\\": "app/"
+            "app\\": "./"
         }
     }
 }

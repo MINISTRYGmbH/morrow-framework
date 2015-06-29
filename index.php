@@ -3,7 +3,7 @@
 // $start_time = microtime(true);
 
 // register the Composer autoloader
-require '../vendor/autoload.php';
+require './vendor/autoload.php';
 
 // execute Morrow framework
 new Morrow\Core\Frontcontroller();
