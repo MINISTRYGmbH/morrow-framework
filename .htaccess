@@ -32,7 +32,7 @@ RewriteRule ^([a-z0-9\-/]*)$ index.php?morrow_path_info=$1&morrow_basehref_depth
 # Map all requests to the public subfolder (also features public folder)
 # ---------------------------------------------------------------------------------------------
 
-#DOES NOT WORK PROPERLY YET!
+#TODO: For example, composer.json can be viewed by the user though its not in any public module folder.
 RewriteCond %{REQUEST_URI} !/modules/.+?/public/.+
 RewriteRule ^(.+?)/(.+)$ modules/$1/public/$2 [L,QSA]
 
