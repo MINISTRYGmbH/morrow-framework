@@ -33,13 +33,15 @@ return [
 
 // routing rules
 	'router.routes'					=> [
-		'=^$=' => '\modules\_main\_404',
+		'=^Demo$=i' => '\\app\\modules\\_main\\Hello_world',
 	],
+
 	'router.fallback'				=>	function($url) {
 											$class = str_replace('/', '_', $url);
+											$class = strtolower($class);
 											$class = ucfirst($class);
 											$class = preg_replace('/[^a-z0-9_]/i', '', $class);
-											return '\app\\modules\\_main\\' . $class;
+											return '\\app\\modules\\_main\\' . $class;
 										},
 	'router.template'				=>	function($namespace) {
 											$namespace = trim($namespace, '\\');

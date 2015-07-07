@@ -1,7 +1,7 @@
 <?php
 
 $modules = [
-	'~^Hello/World$~i' => [
+	'=^(Demo)|(Hello/World)$=i' => [
 		'pre' => [
 			[
 				'class'  => '\\app\\modules\\Clock\\_Pre',
