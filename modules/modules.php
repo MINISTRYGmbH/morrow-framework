@@ -5,6 +5,7 @@ $modules = [
 		'pre' => [
 			[
 				'class'  => '\\app\\modules\\Clock\\_Pre',
+				'config' => ['bla' => 'foo', 'bla2' => 'foo2'],
 			],
 		],
 
@@ -13,6 +14,7 @@ $modules = [
 				'action'   => 'append',
 				'class'    => '\\app\\modules\\Clock\\Time',
 				'selector' => '#module-clock-time',
+				'config' => ['bla' => 'foo2'],
 			],
 		],
 	],

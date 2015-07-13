@@ -10,6 +10,7 @@ class _Pre extends _Default {
 			if(!isset($format)){
 				$format = $this->Config->get('modules.Clock.default_format');
 			}
+
 			return $this->_current_time->format($format);
 		});
 	}
