@@ -8,8 +8,8 @@ class Time extends _Default{
 	public function run(){
 		$this->Views_Serpent->setContent('time', $this->_current_time->format('H:i:s'));
 
-		$Modules = Factory::load('\Morrow\Core\Modules');
-		$Modules->runFeature([
+		$modules = Factory::load('\Morrow\Core\Modules');
+		$modules->runModuleController([
 			'action'   => 'append',
 			'class'    => '\\app\\modules\\Clock\\Day',
 			'selector' => '#module-clock-day',
