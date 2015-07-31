@@ -6,7 +6,7 @@ This framework gives you the power to handle 95% of your website jobs very effic
 Installation
 ============
 
-As simple as 
+As simple as
 ```
 composer create-project morrow/framework [YOUR_PATH]
 ```
