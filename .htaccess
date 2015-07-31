@@ -26,7 +26,7 @@ RewriteEngine on
 
 # Map request to index.php if the file was not found
 # ---------------------------------------------------------------------------------------------
-RewriteRule ^([a-z0-9\-/]*)$ index.php?morrow_path_info=$1&morrow_basehref_depth=1 [L,QSA,NC]
+RewriteRule ^([a-z0-9\-/]*)$ index.php?morrow_path_info=$1 [L,QSA,NC]
 
 
 # Map all requests to the public subfolder (also features public folder)
@@ -36,6 +36,7 @@ RewriteRule ^([a-z0-9\-/]*)$ index.php?morrow_path_info=$1&morrow_basehref_depth
 RewriteCond %{REQUEST_URI} !/modules/.+?/public/.+
 RewriteRule ^(.+?)/(.+)$ modules/$1/public/$2 [L,QSA]
 RewriteCond %{REQUEST_URI} !/modules/.+?/public/.+
+RewriteCond %{REQUEST_URI} !index.php
 RewriteRule ^(.+)$ modules/_main/public/$1 [L,QSA]
 
 # Prevent directory listing
