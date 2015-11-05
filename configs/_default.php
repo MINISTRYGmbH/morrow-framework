@@ -76,7 +76,7 @@ return [
 	'db.encoding'					=> 'utf8',
 
 // image
-	'image.save_path'				=> PUBLIC_STORAGE_PATH . 'thumbs/',
+	'image.save_path'				=> STORAGE_PUBLIC_PATH . 'thumbs/',
 
 // log
 	'log.file.path'					=> STORAGE_PATH .'logs/'. date('Y-m-d') .'.txt',
