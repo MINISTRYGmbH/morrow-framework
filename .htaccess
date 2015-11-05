@@ -34,10 +34,8 @@ RewriteRule ^([a-z0-9\-/]*)$ index.php?morrow_path_info=$1 [L,QSA,NC]
 
 #TODO: For example, composer.json can be viewed by the user though its not in any public module folder.
 RewriteCond %{REQUEST_URI} !/modules/.+?/public/.+
+RewriteCond %{REQUEST_URI} !/storage_public/.+
 RewriteRule ^(.+?)/(.+)$ modules/$1/public/$2 [L,QSA]
-RewriteCond %{REQUEST_URI} !/modules/.+?/public/.+
-RewriteCond %{REQUEST_URI} !index.php
-RewriteRule ^(.+)$ modules/_main/public/$1 [L,QSA]
 
 # Prevent directory listing
 # ---------------------------------------------------------------------------------------------
